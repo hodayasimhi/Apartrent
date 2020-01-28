@@ -55,7 +55,23 @@ exports.ctrlUsers = {
                 console.error('some error occurred', err)
                 res.status(500).send(err.message)
                 })
-                }
+                },
+            logIn(req,res,next){
+                  ConnectMD.then(async() => {
+                  const {UserName = null} = req.params;
+                  const {pass = null} = req.body;
+                  if(!checkInput(id))
+                   res.status(400).send(err.message);
+                  const result = await Users.find({userName:UserName});
+                  if(result&result[2]) res.send(`hey ${userName}`)
+                  else res.status(404).send(`Wrong`);
+                    })
+                    .catch(err => {
+                    console.error("Some error occured", err);
+                    res.status(500).send(err);
+                    })
+                    }
+                
 
 
 }

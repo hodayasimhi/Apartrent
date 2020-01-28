@@ -13,6 +13,8 @@ const ApartrentRouter = new Router();
 ApartrentRouter.get('/users/all', ctrlUsers.getAllUsers);
 ApartrentRouter.get('/users/:id', ctrlUsers.infoUser);
 ApartrentRouter.post('/users/remove', ctrlUsers.removeUserAccount);
+ApartrentRouter.get('/users/login/:userName', ctrlUsers.logIn);
+
 //Messages
 ApartrentRouter.get('/message/all', ctrlMessages.getAllMessage);
 ApartrentRouter.get('/message/Inbox/:id', ctrlMessages.Inbox);
